@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101820">
+<meta name="description" content="MalicarShop — véhicules, pièces et services automobiles au Mali.">
+<title>MalicarShop — Le marché automobile du Mali</title>
+<style>
+:root{--ink:#101820;--gold:#d9a441;--paper:#f5f6f7;--muted:#667085;--line:#e5e7eb;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer;border:0}.top{background:var(--ink);color:#fff;padding:16px max(18px,calc((100% - 1160px)/2));}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:1.25rem;letter-spacing:-.03em}.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--gold);color:var(--ink);font-size:23px}.brand small{display:block;color:var(--gold);font-size:.63rem;letter-spacing:.13em;margin-top:2px}
+.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks button{background:transparent;color:#e7e9ec;padding:10px 12px;border-radius:10px}.navlinks button.active,.navlinks button:hover{background:#26313b;color:var(--gold)}
+main{max-width:1160px;margin:auto;padding:24px 18px 50px}.hero{background:linear-gradient(115deg,rgba(16,24,32,.97),rgba(16,24,32,.65)),url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85') center/cover;color:#fff;border-radius:24px;padding:clamp(26px,5vw,58px);min-height:300px;display:flex;align-items:center}.hero-content{max-width:610px}.eyebrow{color:var(--gold);font-size:.76rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.hero h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.045em;margin:14px 0}.hero p{color:#d6d9dd;max-width:500px;line-height:1.65}.btn{border-radius:11px;padding:12px 16px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn.gold{background:var(--gold);color:var(--ink)}.btn.dark{background:var(--ink);color:#fff}.btn.light{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn.full{width:100%}
+.searchbar{display:flex;gap:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;margin-top:-24px;position:relative;margin-left:18px;margin-right:18px;box-shadow:0 12px 32px #10182012}.searchbar input{flex:1;min-width:0;border:0;outline:0;padding:8px 10px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin:34px 0 18px}.section-head h2{margin:0;font-size:1.55rem;letter-spacing:-.035em}.section-head p{margin:6px 0 0;color:var(--muted);font-size:.92rem}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.chip{padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#344054}.chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:transform .18s,box-shadow .18s}.card:hover{transform:translateY(-3px);box-shadow:0 14px 28px #10182012}.car-img{height:170px;width:100%;object-fit:cover;background:#e5e7eb}.card-body{padding:14px}.meta{color:var(--muted);font-size:.82rem}.car-name{font-size:1.04rem;font-weight:800;margin:5px 0}.price{font-size:1.08rem;font-weight:850;color:#956611;margin:10px 0}.card-actions{display:flex;gap:8px}.card-actions button{flex:1}.heart{width:42px;flex:0 0 42px!important}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.service{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.service-icon{font-size:1.6rem;background:#fbf0d6;width:48px;height:48px;display:grid;place-items:center;border-radius:13px}.service h3{margin:14px 0 7px;font-size:1rem}.service p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.5}
+.notice{padding:12px 14px;background:#fff7e6;border:1px solid #f1d89e;border-radius:12px;color:#7a5511;font-size:.88rem;margin:16px 0}.empty{padding:30px;text-align:center;color:var(--muted);background:#fff;border:1px dashed #d0d5dd;border-radius:16px}
+footer{background:var(--ink);color:#cbd0d5;padding:26px 18px;text-align:center;font-size:.88rem}footer strong{color:var(--gold)}
+.modal-backdrop{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:18px;z-index:10}.modal-backdrop.open{display:flex}.modal{background:#fff;border-radius:20px;padding:24px;width:min(520px,100%);max-height:90vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.modal-head h2{margin:0}.close{background:#eef0f2;border-radius:9px;padding:8px 11px}.field{display:grid;gap:6px;margin:13px 0}.field label{font-weight:700;font-size:.9rem}.field input,.field select{width:100%;padding:12px;border:1px solid #d0d5dd;border-radius:10px;outline-color:var(--gold)}.detail-img{width:100%;height:230px;object-fit:cover;border-radius:14px}.hidden{display:none!important}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.services{grid-template-columns:repeat(2,minmax(0,1fr))}.nav{align-items:flex-start;flex-direction:column}.navlinks{width:100%}}
+@media(max-width:520px){main{padding:16px 12px 35px}.hero{border-radius:18px;min-height:300px;padding:25px 20px}.searchbar{margin-left:8px;margin-right:8px}.searchbar .btn{padding:10px}.grid{gap:10px}.car-img{height:130px}.card-body{padding:11px}.price{font-size:.96rem}.services{gap:10px}.service{padding:14px}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="top"><div class="nav">
+  <div class="brand"><div class="logo">⌁</div><div>MalicarShop<small>LE MARCHÉ AUTO DU MALI</small></div></div>
+  <nav class="navlinks" aria-label="Navigation">
+    <button class="active" data-scroll="accueil">Accueil</button><button data-scroll="vehicules">Véhicules</button><button data-scroll="services">Services</button><button id="sellTop">＋ Vendre un véhicule</button>
+  </nav>
+</div></header>
+<main>
+<section class="hero" id="accueil"><div class="hero-content">
+  <div class="eyebrow">Votre route commence ici</div>
+  <h1>Trouvez la voiture qui vous ressemble.</h1>
+  <p>Découvrez des véhicules, comparez les annonces et connectez-vous aux professionnels de l’automobile au Mali.</p>
+  <button class="btn gold" data-scroll="vehicules">Explorer les annonces&nbsp; →</button>
+</div></section>
+<div class="searchbar"><span style="font-size:1.2rem;padding:7px">⌕</span><input id="searchInput" placeholder="Rechercher une marque, un modèle…" aria-label="Rechercher un véhicule"><button class="btn dark" id="searchBtn">Rechercher</button></div>
+<section id="vehicules">
+  <div class="section-head"><div><h2>Véhicules à découvrir</h2><p>Une sélection de démonstration — prix à confirmer auprès du vendeur.</p></div><button class="btn light" id="sellMid">＋ Déposer une annonce</button></div>
+  <div class="filters" id="filters"><button class="chip active" data-cat="Tout">Tout</button><button class="chip" data-cat="SUV">SUV</button><button class="chip" data-cat="4x4">4×4</button><button class="chip" data-cat="Luxe">Luxe & sport</button><button class="chip" data-cat="Berline">Berline</button></div>
+  <div class="grid" id="carsGrid"></div><div id="empty" class="empty hidden">Aucun véhicule ne correspond à votre recherche.</div>
+  <div class="notice">ℹ️ Les véhicules affichés sont des exemples pour présenter le prototype. Ce ne sont pas des annonces vérifiées.</div>
+</section>
+<section id="services">
+  <div class="section-head"><div><h2>Bien plus que des voitures</h2><p>Les services que MalicarShop veut réunir sur une seule plateforme.</p></div></div>
+  <div class="services">
+    <article class="service"><div class="service-icon">🔧</div><h3>Garages & mécanique</h3><p>Trouvez des professionnels pour l’entretien et la réparation.</p></article>
+    <article class="service"><div class="service-icon">⚙️</div><h3>Pièces détachées</h3><p>Recherchez des pièces et accessoires adaptés à votre véhicule.</p></article>
+    <article class="service"><div class="service-icon">🛡️</div><h3>Assurance auto</h3><p>Découvrez des offres et contactez des assureurs partenaires.</p></article>
+    <article class="service"><div class="service-icon">🚚</div><h3>Transport automobile</h3><p>Mise en relation pour convoyage et livraison de véhicules.</p></article>
+  </div>
+</section>
+</main>
+<footer><strong>MalicarShop</strong> · L’automobile, au cœur du Mali<br><span style="display:inline-block;margin-top:8px">Prototype de démonstration — la publication réelle nécessitera une base de données et un service d’hébergement.</span></footer>
+
+<div class="modal-backdrop" id="sellModal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="sellTitle">
+  <div class="modal-head"><h2 id="sellTitle">Déposer une annonce</h2><button class="close" data-close="sellModal" aria-label="Fermer">✕</button></div>
+  <form id="sellForm">
+    <div class="field"><label for="brand">Marque</label><input id="brand" required placeholder="Ex. Toyota"></div>
+    <div class="field"><label for="model">Modèle</label><input id="model" required placeholder="Ex. Corolla"></div>
+    <div class="field"><label for="year">Année</label><input id="year" required type="number" min="1980" max="2027" value="2022"></div>
+    <div class="field"><label for="price">Prix (FCFA)</label><input id="price" required type="number" min="1" placeholder="Ex. 8500000"></div>
+    <div class="field"><label for="category">Catégorie</label><select id="category"><option>SUV</option><option>4x4</option><option>Luxe</option><option>Berline</option></select></div>
+    <div class="field"><label for="phone">Téléphone / WhatsApp</label><input id="phone" required type="tel" placeholder="+223 …"></div>
+    <button class="btn dark full" type="submit">Ajouter à cette démonstration</button>
+    <p class="meta">Les annonces ajoutées ici restent dans ce navigateur. Pour recevoir de vraies annonces en ligne, une base de données devra être connectée.</p>
+  </form>
+</div></div>
+<div class="modal-backdrop" id="detailModal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+  <div class="modal-head"><h2 id="detailTitle">Détails du véhicule</h2><button class="close" data-close="detailModal">✕</button></div><div id="detailContent"></div>
+</div></div>
+<script>
+const cars = [
+{id:1,brand:"Mercedes-Benz",model:"GLE 450",year:2022,price:38500000,category:"SUV",img:"https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80",desc:"SUV premium, boîte automatique et intérieur confortable."},
+{id:2,brand:"BMW",model:"X5 M Sport",year:2021,price:32000000,category:"SUV",img:"https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80",desc:"SUV sportif avec une finition premium."},
+{id:3,brand:"Toyota",model:"Land Cruiser",year:2023,price:48000000,category:"4x4",img:"https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80",desc:"4×4 robuste pour les trajets urbains et les longues distances."},
+{id:4,brand:"Porsche",model:"911 Carrera",year:2022,price:65000000,category:"Luxe",img:"https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80",desc:"Voiture sportive de prestige au design iconique."},
+{id:5,brand:"Toyota",model:"Corolla",year:2020,price:9500000,category:"Berline",img:"https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=900&q=80",desc:"Berline polyvalente adaptée aux déplacements quotidiens."},
+{id:6,brand:"Range Rover",model:"Sport",year:2022,price:42000000,category:"Luxe",img:"https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80",desc:"SUV de luxe, habitacle raffiné et présence affirmée."},
+{id:7,brand:"Toyota",model:"Hilux",year:2021,price:18500000,category:"4x4",img:"https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=80",desc:"Pick-up polyvalent pour les activités professionnelles."},
+{id:8,brand:"Audi",model:"A6",year:2021,price:22000000,category:"Berline",img:"https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80",desc:"Berline premium au style sobre et élégant."}
+];
+let activeCategory="Tout", query="", favorites=new Set();
+const fmt=n=>new Intl.NumberFormat("fr-FR").format(n)+" FCFA";
+function render(){
+ const filtered=cars.filter(c=>(activeCategory==="Tout"||c.category===activeCategory)&&(`${c.brand} ${c.model} ${c.year}`).toLowerCase().includes(query.toLowerCase()));
+ document.getElementById("carsGrid").innerHTML=filtered.map(c=>`<article class="card"><img class="car-img" src="${c.img}" alt="${c.brand} ${c.model}" loading="lazy" onerror="this.style.visibility='hidden'"><div class="card-body"><div class="meta">${c.year} · ${c.category}</div><div class="car-name">${c.brand} ${c.model}</div><div class="price">${fmt(c.price)}</div><div class="card-actions"><button class="btn dark" onclick="showDetail(${c.id})">Voir l’annonce</button><button class="btn light heart" aria-label="Favori" onclick="toggleFavorite(${c.id},this)">${favorites.has(c.id)?"♥":"♡"}</button></div></div></article>`).join("");
+ document.getElementById("empty").classList.toggle("hidden",filtered.length>0);
+}
+function toggleFavorite(id,btn){if(favorites.has(id)){favorites.delete(id);btn.textContent="♡"}else{favorites.add(id);btn.textContent="♥"}}
+function showDetail(id){const c=cars.find(x=>x.id===id);document.getElementById("detailTitle").textContent=c.brand+" "+c.model;document.getElementById("detailContent").innerHTML=`<img class="detail-img" src="${c.img}" alt="${c.brand} ${c.model}"><p class="meta">${c.year} · ${c.category} · Bamako (exemple)</p><h2 style="color:#956611">${fmt(c.price)}</h2><p>${c.desc}</p><p class="notice">Annonce de démonstration. Vérifiez le véhicule et les documents avant toute transaction.</p><button class="btn dark full" onclick="alert('Les contacts vendeurs seront activés après connexion d’un service de publication réel.')">Contacter le vendeur (bientôt)</button>`;document.getElementById("detailModal").classList.add("open")}
+function openSell(){document.getElementById("sellModal").classList.add("open")}
+document.querySelectorAll("[data-scroll]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".navlinks button").forEach(x=>x.classList.remove("active"));if(b.dataset.scroll==="accueil")window.scrollTo({top:0,behavior:"smooth"});else document.getElementById(b.dataset.scroll).scrollIntoView({behavior:"smooth"});b.classList.add("active")}));
+document.getElementById("sellTop").addEventListener("click",openSell);document.getElementById("sellMid").addEventListener("click",openSell);
+document.getElementById("searchBtn").addEventListener("click",()=>{query=document.getElementById("searchInput").value.trim();render();document.getElementById("vehicules").scrollIntoView({behavior:"smooth"})});
+document.getElementById("searchInput").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("searchBtn").click()});
+document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("[data-cat]");if(!b)return;activeCategory=b.dataset.cat;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x===b));render()});
+document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",()=>document.getElementById(b.dataset.close).classList.remove("open")));
+document.querySelectorAll(".modal-backdrop").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)m.classList.remove("open")}));
+document.getElementById("sellForm").addEventListener("submit",e=>{e.preventDefault();const c={id:Math.max(0,...cars.map(x=>x.id))+1,brand:document.getElementById("brand").value.trim(),model:document.getElementById("model").value.trim(),year:Number(document.getElementById("year").value),price:Number(document.getElementById("price").value),category:document.getElementById("category").value,img:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80",desc:"Annonce ajoutée localement. Contact vendeur : "+document.getElementById("phone").value};cars.unshift(c);render();e.target.reset();document.getElementById("year").value=2022;document.getElementById("sellModal").classList.remove("open");document.getElementById("vehicules").scrollIntoView({behavior:"smooth"});alert("Annonce ajoutée à cette démonstration. Elle n'est pas encore publiée sur Internet.")});
+render();
+</script>
+</body></html>
