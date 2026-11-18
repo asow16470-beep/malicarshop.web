@@ -313,6 +313,65 @@ footer {
         width: 100%;
     }
 }
+
+    /* DESIGN DES CARTES AVEC PHOTOS */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.category {
+    position: relative;
+    height: 160px;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    border-radius: 13px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    text-align: left;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.category::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(5,25,45,.9));
+}
+
+.category:hover {
+    transform: translateY(-5px);
+}
+
+.category h3 {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+}
+
+.category .icon {
+    display: none;
+}
+
+.category.active {
+    outline: 3px solid #f5a623;
+}
+
+@media(max-width:600px) {
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .category {
+        height: 135px;
+    }
+}
 </style>
 </head>
 
@@ -352,11 +411,6 @@ footer {
 
     <div class="categories">
 
-        <div class="category active" data-category="Tous" onclick="filterCategory('Tous',this)">
-            <div class="icon">🔧</div>
-            <h3>Tous les services</h3>
-        </div>
-
         <div class="category" data-category="Mécanique générale" onclick="filterCategory('Mécanique générale',this)">
             <div class="icon">🛠️</div>
             <h3>Mécanique générale</h3>
@@ -365,11 +419,6 @@ footer {
         <div class="category" data-category="Pneumatiques" onclick="filterCategory('Pneumatiques',this)">
             <div class="icon">🛞</div>
             <h3>Pneumatiques</h3>
-        </div>
-
-        <div class="category" data-category="Batteries" onclick="filterCategory('Batteries',this)">
-            <div class="icon">🔋</div>
-            <h3>Batteries</h3>
         </div>
 
         <div class="category" data-category="Vidange" onclick="filterCategory('Vidange',this)">
