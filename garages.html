@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garages & Mécanique | MalicarShop</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+}
+
+header {
+    background: #102b46;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #f5a623;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+}
+
+.hero {
+    background: linear-gradient(120deg, #102b46, #17618a);
+    color: white;
+    padding: 65px 6%;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.search-box {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    background: white;
+    padding: 7px;
+    border-radius: 8px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.search-box button {
+    background: #f5a623;
+    color: #102b46;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 45px auto;
+}
+
+.section-title {
+    margin-bottom: 25px;
+}
+
+.section-title h2 {
+    color: #102b46;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: #666;
+    font-size: 14px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.category {
+    background: white;
+    padding: 22px 12px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #eee;
+    transition: .2s;
+}
+
+.category:hover,
+.category.active {
+    border: 2px solid #f5a623;
+    transform: translateY(-3px);
+}
+
+.category .icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.category h3 {
+    font-size: 14px;
+    color: #102b46;
+}
+
+.category p {
+    font-size: 12px;
+    color: #777;
+    margin-top: 7px;
+}
+
+.professionals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.pro-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.pro-image {
+    height: 145px;
+    background: #dce6ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+}
+
+.pro-content {
+    padding: 18px;
+}
+
+.pro-content h3 {
+    color: #102b46;
+    margin-bottom: 10px;
+}
+
+.pro-content p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.tag {
+    display: inline-block;
+    background: #eaf2f8;
+    color: #17618a;
+    padding: 6px 9px;
+    border-radius: 5px;
+    font-size: 11px;
+    margin: 3px 2px 8px 0;
+}
+
+.contact-btn {
+    display: block;
+    text-align: center;
+    background: #102b46;
+    color: white;
+    padding: 11px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.contact-btn:hover {
+    background: #17618a;
+}
+
+.register {
+    background: #102b46;
+    color: white;
+    padding: 45px 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.register h2 {
+    margin-bottom: 12px;
+}
+
+.register p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.register button {
+    background: #f5a623;
+    color: #102b46;
+    border: none;
+    padding: 14px 25px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#registrationForm {
+    display: none;
+    background: white;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: #222;
+    text-align: left;
+}
+
+#registrationForm input,
+#registrationForm select,
+#registrationForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#registrationForm label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#registrationForm button {
+    width: 100%;
+}
+
+#formMessage {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+footer {
+    background: #0b1e30;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    font-size: 13px;
+}
+
+.empty {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 8px;
+    color: #666;
+}
+
+@media(max-width:600px) {
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    header a {
+        margin: 5px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MALICAR<span>SHOP</span></div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="#categories">Services</a>
+        <a href="#professionnels">Professionnels</a>
+        <a href="#inscription">Inscription</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Garages & Mécanique</h1>
+    <p>
+        Retrouvez les garages, mécaniciens et spécialistes
+        de l'entretien automobile au Mali.
+        Tous les professionnels réunis sur une seule plateforme.
+    </p>
+
+    <div class="search-box">
+        <input type="text" id="searchInput"
+        placeholder="Rechercher un garage, un service, un quartier...">
+        <button onclick="searchProfessionals()">Rechercher</button>
+    </div>
+</section>
+
+<section class="container" id="categories">
+
+    <div class="section-title">
+        <h2>Nos spécialités automobiles</h2>
+        <p>Choisissez le service dont vous avez besoin.</p>
+    </div>
+
+    <div class="categories">
+
+        <div class="category active" data-category="Tous" onclick="filterCategory('Tous',this)">
+            <div class="icon">🔧</div>
+            <h3>Tous les services</h3>
+        </div>
+
+        <div class="category" data-category="Mécanique générale" onclick="filterCategory('Mécanique générale',this)">
+            <div class="icon">🛠️</div>
+            <h3>Mécanique générale</h3>
+        </div>
+
+        <div class="category" data-category="Pneumatiques" onclick="filterCategory('Pneumatiques',this)">
+            <div class="icon">🛞</div>
+            <h3>Pneumatiques</h3>
+        </div>
+
+        <div class="category" data-category="Batteries" onclick="filterCategory('Batteries',this)">
+            <div class="icon">🔋</div>
+            <h3>Batteries</h3>
+        </div>
+
+        <div class="category" data-category="Vidange" onclick="filterCategory('Vidange',this)">
+            <div class="icon">🛢️</div>
+            <h3>Vidange</h3>
+        </div>
+
+        <div class="category" data-category="Diagnostic" onclick="filterCategory('Diagnostic',this)">
+            <div class="icon">🔍</div>
+            <h3>Diagnostic</h3>
+        </div>
+
+        <div class="category" data-category="Électricité automobile" onclick="filterCategory('Électricité automobile',this)">
+            <div class="icon">⚡</div>
+            <h3>Électricité automobile</h3>
+        </div>
+
+        <div class="category" data-category="Climatisation" onclick="filterCategory('Climatisation',this)">
+            <div class="icon">❄️</div>
+            <h3>Climatisation</h3>
+        </div>
+
+        <div class="category" data-category="Carrosserie" onclick="filterCategory('Carrosserie',this)">
+            <div class="icon">🎨</div>
+            <h3>Carrosserie</h3>
+        </div>
+
+        <div class="category" data-category="Lavage" onclick="filterCategory('Lavage',this)">
+            <div class="icon">🚿</div>
+            <h3>Lavage automobile</h3>
+        </div>
+
+        <div class="category" data-category="Dépannage" onclick="filterCategory('Dépannage',this)">
+            <div class="icon">🚨</div>
+            <h3>Dépannage</h3>
+        </div>
+
+    </div>
+</section>
+
+<section class="container" id="professionnels">
+
+    <div class="section-title">
+        <h2>Les professionnels de l'automobile</h2>
+        <p>Découvrez les acteurs économiques du secteur automobile.</p>
+    </div>
+
+    <div class="professionals" id="professionalsList">
+
+        <div class="pro-card" data-category="Mécanique générale Diagnostic">
+            <div class="pro-image">🔧</div>
+            <div class="pro-content">
+                <h3>Garage automobile</h3>
+                <span class="tag">Mécanique générale</span>
+                <span class="tag">Diagnostic</span>
+                <p>Professionnels de la réparation et de l'entretien des véhicules.</p>
+                <p>📍 Bamako</p>
+                <a href="#inscription" class="contact-btn">Découvrir</a>
+            </div>
+        </div>
+
+        <div class="pro-card" data-category="Pneumatiques">
+            <div class="pro-image">🛞</div>
+            <div class="pro-content">
+                <h3>Centre pneumatique</h3>
+                <span class="tag">Pneumatiques</span>
+                <p>Vente de pneus, montage, équilibrage et réparation.</p>
+                <p>📍 Bamako</p>
+                <a href="#inscription" class="contact-btn">Découvrir</a>
+            </div>
+        </div>
+
+        <div class="pro-card" data-category="Batteries Électricité automobile">
+            <div class="pro-image">🔋</div>
+            <div class="pro-content">
+                <h3>Spécialiste batteries</h3>
+                <span class="tag">Batteries</span>
+                <span class="tag">Électricité</span>
+                <p>Vente, installation et remplacement de batteries automobiles.</p>
+                <p>📍 Bamako</p>
+                <a href="#inscription" class="contact-btn">Découvrir</a>
+            </div>
+        </div>
+
+        <div class="pro-card" data-category="Vidange">
+            <div class="pro-image">🛢️</div>
+            <div class="pro-content">
+                <h3>Centre de vidange</h3>
+                <span class="tag">Vidange</span>
+                <p>Entretien moteur, huiles et remplacement des filtres.</p>
+                <p>📍 Bamako</p>
+                <a href="#inscription" class="contact-btn">Découvrir</a>
+            </div>
+        </div>
+
+        <div class="pro-card" data-category="Climatisation Électricité automobile">
+            <div class="pro-image">❄️</div>
+            <div class="pro-content">
+                <h3>Atelier climatisation</h3>
+                <span class="tag">Climatisation</span>
+                <span class="tag">Électricité</span>
+                <p>Entretien, recharge et réparation de climatisation automobile.</p>
+                <p>📍 Bamako</p>
+                <a href="#inscription" class="contact-btn">Découvrir</a>
+            </div>
+        </div>
+
+        <div class="pro-card" data-category="Carrosserie">
+            <div class="pro-image">🎨</div>
+            <div class="pro-content">
+                <h3>Atelier carrosserie</h3>
+                <span class="tag">Carrosserie</span>
+                <p>Tôlerie, peinture et réparation des éléments de carrosserie.</p>
+                <p>📍 Bamako</p>
+                <a href="#inscription" class="contact-btn">Découvrir</a>
+            </div>
+        </div>
+
+        <div class="pro-card" data-category="Lavage">
+            <div class="pro-image">🚿</div>
+            <div class="pro-content">
+                <h3>Station de lavage</h3>
+                <span class="tag">Lavage</span>
+                <p>Nettoyage intérieur, extérieur et entretien esthétique.</p>
+                <p>📍 Bamako</p>
+                <a href="#inscription" class="contact-btn">Découvrir</a>
+            </div>
+        </div>
+
+        <div class="pro-card" data-category="Dépannage">
+            <div class="pro-image">🚨</div>
+            <div class="pro-content">
+                <h3>Service de dépannage</h3>
+                <span class="tag">Dépannage</span>
+                <p>Assistance routière, remorquage et dépannage automobile.</p>
+                <p>📍 Bamako</p>
+                <a href="#inscription" class="contact-btn">Découvrir</a>
+            </div>
+        </div>
+
+    </div>
+
+    <p id="noResults" class="empty" style="display:none;margin-top:20px;">
+        Aucun professionnel trouvé pour cette recherche.
+    </p>
+
+</section>
+
+<section class="container" id="inscription">
+
+    <div class="register">
+        <h2>Vous êtes un professionnel de l'automobile ?</h2>
+        <p>
+            Rejoignez MalicarShop et présentez votre garage,
+            votre atelier ou votre activité à des milliers de clients potentiels.
+        </p>
+
+        <button onclick="toggleForm()">Inscrire mon établissement</button>
+
+        <form id="registrationForm">
+
+            <label>Nom de l'établissement ou de l'entreprise</label>
+            <input type="text" id="businessName" required>
+
+            <label>Nom du responsable</label>
+            <input type="text" id="ownerName" required>
+
+            <label>Type d'activité</label>
+            <select id="businessType" required>
+                <option value="">Choisir une activité</option>
+                <option>Garage automobile</option>
+                <option>Mécanicien indépendant</option>
+                <option>Centre pneumatique</option>
+                <option>Vendeur de batteries</option>
+                <option>Centre de vidange</option>
+                <option>Diagnostic automobile</option>
+                <option>Électricien automobile</option>
+                <option>Climatisation automobile</option>
+                <option>Carrosserie et peinture</option>
+                <option>Station de lavage</option>
+                <option>Dépannage et remorquage</option>
+                <option>Autre professionnel automobile</option>
+            </select>
+
+            <label>Ville et quartier</label>
+            <input type="text" id="location" required>
+
+            <label>Téléphone</label>
+            <input type="tel" id="phone" required>
+
+            <label>Description des prestations</label>
+            <textarea id="description" rows="4" required></textarea>
+
+            <button type="submit">Envoyer ma demande</button>
+
+            <p id="formMessage"></p>
+
+        </form>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 MALICARSHOP - Le marché automobile du Mali.</p>
+    <p>Votre partenaire pour tous vos besoins automobiles.</p>
+</footer>
+
+<script>
+
+let selectedCategory = "Tous";
+
+function filterCategory(category, element) {
+
+    selectedCategory = category;
+
+    document.querySelectorAll(".category").forEach(item => {
+        item.classList.remove("active");
+    });
+
+    element.classList.add("active");
+
+    searchProfessionals();
+}
+
+function searchProfessionals() {
+
+    const search = document.getElementById("searchInput").value.toLowerCase();
+
+    const cards = document.querySelectorAll(".pro-card");
+
+    let visible = 0;
+
+    cards.forEach(card => {
+
+        const text = card.innerText.toLowerCase();
+        const categories = card.dataset.category;
+
+        const matchesSearch = text.includes(search);
+        const matchesCategory =
+            selectedCategory === "Tous" ||
+            categories.includes(selectedCategory);
+
+        if (matchesSearch && matchesCategory) {
+            card.style.display = "block";
+            visible++;
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    document.getElementById("noResults").style.display =
+        visible === 0 ? "block" : "none";
+}
+
+document.getElementById("searchInput").addEventListener("input", searchProfessionals);
+
+function toggleForm() {
+
+    const form = document.getElementById("registrationForm");
+
+    form.style.display =
+        form.style.display === "block" ? "none" : "block";
+
+}
+
+document.getElementById("registrationForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    document.getElementById("formMessage").textContent =
+        "Votre formulaire de démonstration a été rempli. L'enregistrement définitif sera activé après la connexion à Supabase.";
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
