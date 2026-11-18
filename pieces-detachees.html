@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pièces détachées | MalicarShop</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #172b45;
+}
+
+header {
+    background: #102b49;
+    color: white;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #f5a623;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background: linear-gradient(120deg, #102b49, #245477);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.hero h1 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    margin-bottom: 25px;
+}
+
+.search {
+    max-width: 650px;
+    margin: auto;
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.search input {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    outline: none;
+}
+
+.search button {
+    background: #f5a623;
+    border: none;
+    padding: 16px 22px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container {
+    padding: 40px 6%;
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.category {
+    background: white;
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 3px 12px #00000012;
+    border-bottom: 4px solid #f5a623;
+}
+
+.category h3 {
+    font-size: 17px;
+}
+
+.category p {
+    font-size: 13px;
+    color: #667;
+    margin-top: 8px;
+}
+
+.info {
+    margin-top: 45px;
+    background: #102b49;
+    color: white;
+    padding: 35px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.info button {
+    margin-top: 18px;
+    padding: 13px 22px;
+    background: #f5a623;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background: #102b49;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media(max-width:650px) {
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    header {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Malicar<span>Shop</span></div>
+    <a href="index.html">← Accueil</a>
+</header>
+
+<section class="hero">
+    <h1>Pièces détachées automobiles</h1>
+    <p>Trouvez les pièces qu'il vous faut partout au Mali.</p>
+
+    <div class="search">
+        <input type="search" placeholder="Ex : plaquettes Toyota Corolla...">
+        <button>Rechercher</button>
+    </div>
+</section>
+
+<main class="container">
+
+<h2>Nos catégories de pièces</h2>
+
+<div class="categories">
+
+<div class="category">
+<h3>Moteur et pièces moteur</h3>
+<p>Moteurs, pistons, courroies...</p>
+</div>
+
+<div class="category">
+<h3>Freinage</h3>
+<p>Disques, plaquettes, étriers...</p>
+</div>
+
+<div class="category">
+<h3>Suspension et amortisseurs</h3>
+<p>Amortisseurs, rotules, ressorts...</p>
+</div>
+
+<div class="category">
+<h3>Embrayage et transmission</h3>
+<p>Embrayages, boîtes, cardans...</p>
+</div>
+
+<div class="category">
+<h3>Batterie et électricité</h3>
+<p>Batteries, alternateurs, démarreurs...</p>
+</div>
+
+<div class="category">
+<h3>Carrosserie et accessoires</h3>
+<p>Phares, rétroviseurs, pare-chocs...</p>
+</div>
+
+<div class="category">
+<h3>Pneus et jantes</h3>
+<p>Pneumatiques et jantes automobiles...</p>
+</div>
+
+<div class="category">
+<h3>Filtres et lubrifiants</h3>
+<p>Filtres à huile, à air et huiles moteur...</p>
+</div>
+
+<div class="category">
+<h3>Pièces d'occasion</h3>
+<p>Pièces automobiles de seconde main...</p>
+</div>
+
+</div>
+
+<section class="info">
+<h2>Vous êtes vendeur de pièces automobiles ?</h2>
+<p>Rejoignez MalicarShop et présentez vos produits à des clients partout au Mali.</p>
+<button>Devenir vendeur</button>
+</section>
+
+</main>
+
+<footer>
+© 2026 MalicarShop — Le marché automobile du Mali.
+</footer>
+
+</body>
+</html>
