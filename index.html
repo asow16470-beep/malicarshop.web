@@ -6,104 +6,536 @@
 <meta name="theme-color" content="#071827">
 <meta name="description" content="MalicarShop — Le marché automobile du Mali. Voitures, utilitaires, motos et services automobiles.">
 <title>MalicarShop — Le marché automobile du Mali</title>
+
 <style>
-:root{--navy:#071827;--navy2:#101f2e;--gold:#e4ad36;--gold2:#f4bd42;--paper:#f4f6f8;--ink:#101820;--muted:#667085;--line:#dce2e8;--white:#fff}
+:root{
+--navy:#071827;
+--navy2:#101f2e;
+--gold:#e4ad36;
+--gold2:#f4bd42;
+--paper:#f4f6f8;
+--ink:#101820;
+--muted:#667085;
+--line:#dce2e8;
+--white:#fff
+}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+body{
+margin:0;
+background:var(--paper);
+color:var(--ink);
+font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif
+}
 button,input,select{font:inherit}
 button{cursor:pointer;border:0}
-.top{background:linear-gradient(110deg,#061421,#0d2030);color:#fff;padding:12px max(18px,calc((100% - 1240px)/2));border-bottom:1px solid #263747}
-.nav{max-width:1240px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:78px}
-.brand{display:flex;align-items:center;min-width:225px}
-.brand img{display:block;width:260px;max-width:100%;height:72px;object-fit:contain;object-position:left center}
-.navlinks{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.navlinks button{background:transparent;color:#f3f5f7;padding:11px 15px;border-radius:12px;font-weight:650}
-.navlinks button.active,.navlinks button:hover{background:#263747;color:var(--gold2)}
-.navlinks .sell-nav{background:var(--gold);color:#101820;font-weight:800}
-.navlinks .sell-nav:hover{background:var(--gold2);color:#101820}
-.hero{min-height:440px;background:linear-gradient(90deg,rgba(3,17,29,.96) 0%,rgba(3,17,29,.78) 42%,rgba(3,17,29,.08) 100%),url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=90') center/cover;display:flex;align-items:center;color:#fff}
-.hero-inner{width:min(1240px,100%);margin:auto;padding:58px 28px}
+
+.top{
+background:linear-gradient(110deg,#061421,#0d2030);
+color:#fff;
+padding:12px max(18px,calc((100% - 1240px)/2));
+border-bottom:1px solid #263747
+}
+
+.nav{
+max-width:1240px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:22px;
+min-height:78px
+}
+
+.brand{
+display:flex;
+align-items:center;
+min-width:225px;
+text-decoration:none
+}
+
+.brand-mark{
+display:block;
+width:260px;
+max-width:100%;
+height:72px;
+overflow:visible
+}
+
+.navlinks{
+display:flex;
+align-items:center;
+gap:8px;
+flex-wrap:wrap
+}
+
+.navlinks button{
+background:transparent;
+color:#f3f5f7;
+padding:11px 15px;
+border-radius:12px;
+font-weight:650
+}
+
+.navlinks button.active,
+.navlinks button:hover{
+background:#263747;
+color:var(--gold2)
+}
+
+.navlinks .sell-nav{
+background:var(--gold);
+color:#101820;
+font-weight:800
+}
+
+.navlinks .sell-nav:hover{
+background:var(--gold2);
+color:#101820
+}
+
+.hero{
+min-height:440px;
+background:
+linear-gradient(90deg,rgba(3,17,29,.96) 0%,rgba(3,17,29,.78) 42%,rgba(3,17,29,.08) 100%),
+url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=90') center/cover;
+display:flex;
+align-items:center;
+color:#fff
+}
+
+.hero-inner{
+width:min(1240px,100%);
+margin:auto;
+padding:58px 28px
+}
+
 .hero-content{max-width:570px}
-.eyebrow{color:var(--gold2);font-size:.9rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
-.hero h1{font-size:clamp(2.35rem,5vw,4.2rem);line-height:1.02;letter-spacing:-.05em;margin:16px 0}
+
+.eyebrow{
+color:var(--gold2);
+font-size:.9rem;
+font-weight:850;
+letter-spacing:.14em;
+text-transform:uppercase
+}
+
+.hero h1{
+font-size:clamp(2.35rem,5vw,4.2rem);
+line-height:1.02;
+letter-spacing:-.05em;
+margin:16px 0
+}
+
 .hero h1 span{color:var(--gold2)}
-.hero p{font-size:1.08rem;color:#e0e6eb;line-height:1.55;max-width:510px;margin:0 0 25px}
-.btn{border-radius:12px;padding:13px 18px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none}
+
+.hero p{
+font-size:1.08rem;
+color:#e0e6eb;
+line-height:1.55;
+max-width:510px;
+margin:0 0 25px
+}
+
+.btn{
+border-radius:12px;
+padding:13px 18px;
+font-weight:800;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:9px;
+text-decoration:none
+}
+
 .btn.gold{background:var(--gold);color:#101820}
 .btn.gold:hover{background:var(--gold2)}
 .btn.dark{background:var(--navy);color:#fff}
 .btn.dark:hover{background:#19344a}
 .btn.light{background:#fff;color:var(--ink);border:1px solid var(--line)}
-main{max-width:1240px;margin:auto;padding:0 22px 52px}
-.search-panel{background:#fff;border:1px solid #e4e9ef;border-radius:24px;padding:20px 22px 22px;margin:-48px auto 0;position:relative;z-index:2;box-shadow:0 18px 40px rgba(7,24,39,.16)}
-.category-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}
-.category-tabs button{min-height:72px;border-radius:15px;background:#edf0f3;color:#101820;font-size:1.05rem;font-weight:850;border:1px solid transparent}
-.category-tabs button.active{background:var(--navy);color:var(--gold2);border-color:var(--gold);box-shadow:0 4px 0 var(--gold)}
-.search-fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.search-fields input,.search-fields select{width:100%;min-width:0;height:50px;border:1px solid #cfd7df;border-radius:12px;background:#fff;padding:0 14px;color:#25313d;outline-color:var(--gold)}
-.search-submit{width:100%;margin-top:16px;height:54px;font-size:1.05rem}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:58px 0 18px}
-.section-head h2{margin:0;font-size:clamp(1.55rem,3vw,2rem);letter-spacing:-.04em}
-.section-head p{margin:6px 0 0;color:var(--muted)}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
-.chip{padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#344054}
-.chip.active{background:var(--navy);color:var(--gold2);border-color:var(--navy)}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.card{background:#fff;border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:0 5px 14px #1018200b}
-.card-img-wrap{height:180px;position:relative;background:#e5e7eb}
-.car-img{height:100%;width:100%;object-fit:cover}
-.badge{position:absolute;left:12px;bottom:10px;background:var(--gold);color:#101820;border-radius:20px;padding:5px 10px;font-size:.76rem;font-weight:850}
-.heart{position:absolute;right:10px;top:10px;width:36px;height:36px;border-radius:50%;background:#071827b8;color:#fff;font-size:1.2rem}
+
+main{
+max-width:1240px;
+margin:auto;
+padding:0 22px 52px
+}
+
+.search-panel{
+background:#fff;
+border:1px solid #e4e9ef;
+border-radius:24px;
+padding:20px 22px 22px;
+margin:-48px auto 0;
+position:relative;
+z-index:2;
+box-shadow:0 18px 40px rgba(7,24,39,.16)
+}
+
+.category-tabs{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:10px;
+margin-bottom:16px
+}
+
+.category-tabs button{
+min-height:72px;
+border-radius:15px;
+background:#edf0f3;
+color:#101820;
+font-size:1.05rem;
+font-weight:850;
+border:1px solid transparent
+}
+
+.category-tabs button.active{
+background:var(--navy);
+color:var(--gold2);
+border-color:var(--gold);
+box-shadow:0 4px 0 var(--gold)
+}
+
+.search-fields{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:12px
+}
+
+.search-fields input,
+.search-fields select{
+width:100%;
+min-width:0;
+height:50px;
+border:1px solid #cfd7df;
+border-radius:12px;
+background:#fff;
+padding:0 14px;
+color:#25313d;
+outline-color:var(--gold)
+}
+
+.search-submit{
+width:100%;
+margin-top:16px;
+height:54px;
+font-size:1.05rem
+}
+
+.section-head{
+display:flex;
+justify-content:space-between;
+align-items:end;
+gap:16px;
+margin:58px 0 18px
+}
+
+.section-head h2{
+margin:0;
+font-size:clamp(1.55rem,3vw,2rem);
+letter-spacing:-.04em
+}
+
+.section-head p{
+margin:6px 0 0;
+color:var(--muted)
+}
+
+.filters{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin:0 0 16px
+}
+
+.chip{
+padding:8px 13px;
+border:1px solid var(--line);
+border-radius:999px;
+background:#fff;
+color:#344054
+}
+
+.chip.active{
+background:var(--navy);
+color:var(--gold2);
+border-color:var(--navy)
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:16px
+}
+
+.card{
+background:#fff;
+border:1px solid var(--line);
+border-radius:17px;
+overflow:hidden;
+box-shadow:0 5px 14px #1018200b
+}
+
+.card-img-wrap{
+height:180px;
+position:relative;
+background:#e5e7eb
+}
+
+.car-img{
+height:100%;
+width:100%;
+object-fit:cover
+}
+
+.badge{
+position:absolute;
+left:12px;
+bottom:10px;
+background:var(--gold);
+color:#101820;
+border-radius:20px;
+padding:5px 10px;
+font-size:.76rem;
+font-weight:850
+}
+
+.heart{
+position:absolute;
+right:10px;
+top:10px;
+width:36px;
+height:36px;
+border-radius:50%;
+background:#071827b8;
+color:#fff;
+font-size:1.2rem
+}
+
 .card-body{padding:14px}
 .meta{color:var(--muted);font-size:.82rem}
 .car-name{font-size:1.02rem;font-weight:850;margin:6px 0}
-.specs{display:flex;gap:9px;flex-wrap:wrap;color:#526071;font-size:.78rem;margin:9px 0}
-.price{font-size:1.12rem;font-weight:900;color:#a56b0b;margin:12px 0}
+
+.specs{
+display:flex;
+gap:9px;
+flex-wrap:wrap;
+color:#526071;
+font-size:.78rem;
+margin:9px 0
+}
+
+.price{
+font-size:1.12rem;
+font-weight:900;
+color:#a56b0b;
+margin:12px 0
+}
+
 .card-actions{display:flex;gap:8px}
 .card-actions button{flex:1;padding:10px 8px;font-size:.85rem}
-.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.service{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;cursor:pointer}
-.service-icon{font-size:1.6rem;background:#fbf0d6;width:48px;height:48px;display:grid;place-items:center;border-radius:13px}
+
+.services{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px
+}
+
+.service{
+background:#fff;
+border:1px solid var(--line);
+border-radius:16px;
+padding:20px;
+cursor:pointer
+}
+
+.service-icon{
+font-size:1.6rem;
+background:#fbf0d6;
+width:48px;
+height:48px;
+display:grid;
+place-items:center;
+border-radius:13px
+}
+
 .service h3{margin:14px 0 7px;font-size:1rem}
-.service p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.5}
-.notice{padding:12px 14px;background:#fff7e6;border:1px solid #f1d89e;border-radius:12px;color:#7a5511;font-size:.88rem;margin:16px 0}
-.empty{padding:30px;text-align:center;color:var(--muted);background:#fff;border:1px dashed #d0d5dd;border-radius:16px}
-footer{background:var(--navy);color:#cbd0d5;padding:28px 18px;text-align:center;font-size:.88rem}
+
+.service p{
+margin:0;
+color:var(--muted);
+font-size:.88rem;
+line-height:1.5
+}
+
+.notice{
+padding:12px 14px;
+background:#fff7e6;
+border:1px solid #f1d89e;
+border-radius:12px;
+color:#7a5511;
+font-size:.88rem;
+margin:16px 0
+}
+
+.empty{
+padding:30px;
+text-align:center;
+color:var(--muted);
+background:#fff;
+border:1px dashed #d0d5dd;
+border-radius:16px
+}
+
+footer{
+background:var(--navy);
+color:#cbd0d5;
+padding:28px 18px;
+text-align:center;
+font-size:.88rem
+}
+
 footer strong{color:var(--gold)}
-.modal-backdrop{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:18px;z-index:10}
+
+.modal-backdrop{
+position:fixed;
+inset:0;
+background:#0009;
+display:none;
+align-items:center;
+justify-content:center;
+padding:18px;
+z-index:10
+}
+
 .modal-backdrop.open{display:flex}
-.modal{background:#fff;border-radius:20px;padding:24px;width:min(520px,100%);max-height:90vh;overflow:auto}
-.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+
+.modal{
+background:#fff;
+border-radius:20px;
+padding:24px;
+width:min(520px,100%);
+max-height:90vh;
+overflow:auto
+}
+
+.modal-head{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:18px
+}
+
 .modal-head h2{margin:0}
-.close{background:#eef0f2;border-radius:9px;padding:8px 11px}
-.field{display:grid;gap:6px;margin:13px 0}
+
+.close{
+background:#eef0f2;
+border-radius:9px;
+padding:8px 11px
+}
+
+.field{
+display:grid;
+gap:6px;
+margin:13px 0
+}
+
 .field label{font-weight:700;font-size:.9rem}
-.field input,.field select{width:100%;padding:12px;border:1px solid #d0d5dd;border-radius:10px;outline-color:var(--gold)}
-.detail-img{width:100%;height:230px;object-fit:cover;border-radius:14px}
+
+.field input,
+.field select{
+width:100%;
+padding:12px;
+border:1px solid #d0d5dd;
+border-radius:10px;
+outline-color:var(--gold)
+}
+
+.detail-img{
+width:100%;
+height:230px;
+object-fit:cover;
+border-radius:14px
+}
+
 .hidden{display:none!important}
+
+/* TABLETTES */
 @media(max-width:980px){
-.nav{align-items:flex-start;flex-direction:column;padding:8px 0}
-.navlinks{width:100%}
+.nav{
+align-items:flex-start;
+flex-direction:column;
+padding:8px 0;
+gap:8px
+}
+
+.navlinks{
+width:100%;
+flex-wrap:nowrap;
+overflow-x:auto;
+white-space:nowrap;
+padding-bottom:5px;
+scrollbar-width:thin
+}
+
 .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .services{grid-template-columns:repeat(2,minmax(0,1fr))}
 .hero{min-height:400px}
 }
+
+/* TELEPHONES */
 @media(max-width:600px){
 .top{padding:10px 14px}
-.brand img{width:230px;height:62px}
+.brand-mark{width:215px;height:60px}
+
 .navlinks{gap:3px}
-.navlinks button{padding:9px 10px;font-size:.9rem}
-.hero{min-height:390px;background-position:60% center}
+
+.navlinks button{
+padding:9px 10px;
+font-size:.9rem
+}
+
+.hero{
+min-height:390px;
+background-position:60% center
+}
+
 .hero-inner{padding:42px 20px}
 .hero-content{max-width:100%}
 .hero p{font-size:1rem}
-.search-panel{margin:-30px 0 0;padding:13px;border-radius:20px}
+
+.search-panel{
+margin:-30px 0 0;
+padding:13px;
+border-radius:20px
+}
+
 .category-tabs{gap:7px}
-.category-tabs button{font-size:.87rem;min-height:64px;padding:8px 4px}
-.search-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.search-fields input,.search-fields select{height:46px;padding:0 9px;font-size:.88rem}
-.section-head{align-items:flex-start;flex-direction:column;margin-top:40px}
+
+.category-tabs button{
+font-size:.87rem;
+min-height:64px;
+padding:8px 4px
+}
+
+.search-fields{
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:8px
+}
+
+.search-fields input,
+.search-fields select{
+height:46px;
+padding:0 9px;
+font-size:.88rem
+}
+
+.section-head{
+align-items:flex-start;
+flex-direction:column;
+margin-top:40px
+}
+
 .grid{gap:10px}
 .card-img-wrap{height:135px}
 .card-body{padding:10px}
@@ -116,13 +548,22 @@ main{padding:0 12px 35px}
 }
 </style>
 </head>
+
 <body>
 
 <header class="top">
 <div class="nav">
+
 <a class="brand" href="#accueil" aria-label="MalicarShop accueil">
-<img src="malicarshop-logo.png" alt="MalicarShop — Le marché automobile du Mali">
+<svg class="brand-mark" viewBox="0 0 310 86" role="img" aria-label="MalicarShop — Le marché automobile du Mali">
+<path d="M20 31 C55 7 91 7 126 23 C151 34 178 32 205 17" fill="none" stroke="#f4bd42" stroke-width="6" stroke-linecap="round"/>
+<text x="18" y="62" font-size="42" font-weight="800" font-style="italic" fill="#ffffff" letter-spacing="-2">Malicar</text>
+<text x="157" y="62" font-size="42" font-weight="800" font-style="italic" fill="#f4bd42" letter-spacing="-2">Shop</text>
+<path d="M18 72 H48 M262 72 H292" stroke="#f4bd42" stroke-width="2"/>
+<text x="53" y="78" font-size="10" font-weight="600" fill="#ffffff">Le marché automobile du Mali</text>
+</svg>
 </a>
+
 <nav class="navlinks" aria-label="Navigation">
 <button class="active" data-scroll="accueil">Accueil</button>
 <button data-scroll="vehicules">Véhicules⌄</button>
@@ -130,6 +571,7 @@ main{padding:0 12px 35px}
 <button data-scroll="conseils">Conseils</button>
 <button class="sell-nav" id="sellTop">＋ Vendre un véhicule</button>
 </nav>
+
 </div>
 </header>
 
@@ -147,6 +589,7 @@ main{padding:0 12px 35px}
 <main>
 
 <section class="search-panel" aria-label="Recherche de véhicules">
+
 <div class="category-tabs" id="categoryTabs">
 <button class="active" type="button" data-type="Voitures">🚘 &nbsp; Voitures</button>
 <button type="button" data-type="Utilitaires">🚚 &nbsp; Utilitaires</button>
@@ -156,6 +599,7 @@ main{padding:0 12px 35px}
 <div class="search-fields">
 <input id="searchBrand" placeholder="Marque" aria-label="Marque">
 <input id="searchModel" placeholder="Modèle" aria-label="Modèle">
+
 <select id="searchPrice" aria-label="Prix maximum">
 <option value="">Prix max (FCFA)</option>
 <option value="1000000">1 000 000 FCFA</option>
@@ -164,6 +608,7 @@ main{padding:0 12px 35px}
 <option value="25000000">25 000 000 FCFA</option>
 <option value="50000000">50 000 000 FCFA</option>
 </select>
+
 <select id="searchLocation" aria-label="Localisation">
 <option value="">Localisation</option>
 <option>Bamako</option>
@@ -179,6 +624,7 @@ main{padding:0 12px 35px}
 </section>
 
 <section id="vehicules">
+
 <div class="section-head">
 <div>
 <h2>Véhicules à découvrir</h2>
@@ -197,6 +643,7 @@ main{padding:0 12px 35px}
 
 <div class="grid" id="carsGrid"></div>
 <div id="empty" class="empty hidden">Aucun véhicule ne correspond à votre recherche.</div>
+
 <div class="notice">ℹ️ Les annonces affichées sont des exemples de démonstration. Elles ne sont pas des offres vérifiées.</div>
 </section>
 
@@ -253,12 +700,14 @@ main{padding:0 12px 35px}
 
 <div class="modal-backdrop" id="sellModal">
 <div class="modal" role="dialog" aria-modal="true" aria-labelledby="sellTitle">
+
 <div class="modal-head">
 <h2 id="sellTitle">Déposer une annonce</h2>
 <button class="close" data-close="sellModal" aria-label="Fermer">✕</button>
 </div>
 
 <form id="sellForm">
+
 <div class="field">
 <label for="brand">Marque</label>
 <input id="brand" required placeholder="Ex. Toyota">
@@ -310,6 +759,7 @@ main{padding:0 12px 35px}
 
 <button class="btn dark full" type="submit">Ajouter à cette démonstration</button>
 <p class="meta">Les annonces ajoutées ici restent dans ce navigateur. La publication réelle nécessitera une base de données.</p>
+
 </form>
 </div>
 </div>
@@ -325,15 +775,129 @@ main{padding:0 12px 35px}
 </div>
 
 <script>
+
 const cars=[
-{id:1,brand:"Toyota",model:"Land Cruiser Prado",year:2022,price:28500000,category:"4x4",type:"Voitures",fuel:"Diesel",km:"45 000 km",location:"Bamako",img:"https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=85",desc:"4x4 confortable et robuste. Exemple d’annonce à confirmer."},
-{id:2,brand:"Toyota",model:"Hilux",year:2021,price:19800000,category:"Pick-up",type:"Utilitaires",fuel:"Diesel",km:"78 000 km",location:"Bamako",img:"https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=85",desc:"Pick-up polyvalent pour les activités professionnelles."},
-{id:3,brand:"TVS",model:"Apache RTR 160",year:2024,price:1150000,category:"Sportive",type:"Motos",fuel:"Essence",km:"3 200 km",location:"Bamako",img:"https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85",desc:"Moto de démonstration. Informations à confirmer auprès du vendeur."},
-{id:4,brand:"Hyundai",model:"H-1",year:2020,price:14000000,category:"Fourgon",type:"Utilitaires",fuel:"Diesel",km:"96 000 km",location:"Kati",img:"https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&w=900&q=85",desc:"Fourgon utilitaire pour transport de personnes ou marchandises."},
-{id:5,brand:"Mercedes-Benz",model:"GLE 450",year:2022,price:38500000,category:"SUV",type:"Voitures",fuel:"Essence",km:"32 000 km",location:"Bamako",img:"https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=85",desc:"SUV premium, boîte automatique et intérieur confortable."},
-{id:6,brand:"Yamaha",model:"XTZ 125",year:2023,price:1250000,category:"Tout-terrain",type:"Motos",fuel:"Essence",km:"5 000 km",location:"Sikasso",img:"https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=85",desc:"Moto polyvalente pour les déplacements quotidiens."},
-{id:7,brand:"Toyota",model:"Hiace",year:2021,price:16500000,category:"Fourgon",type:"Utilitaires",fuel:"Diesel",km:"70 000 km",location:"Bamako",img:"https://images.unsplash.com/photo-1520052205864-92d242b3a76b?auto=format&fit=crop&w=900&q=85",desc:"Véhicule utilitaire adapté au transport."},
-{id:8,brand:"BMW",model:"X5 M Sport",year:2021,price:32000000,category:"SUV",type:"Voitures",fuel:"Diesel",km:"51 000 km",location:"Ségou",img:"https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=85",desc:"SUV sportif avec finition premium."}
+
+{
+id:1,
+brand:"Toyota",
+model:"Land Cruiser Prado",
+year:2022,
+price:28500000,
+category:"4x4",
+type:"Voitures",
+fuel:"Diesel",
+km:"45 000 km",
+location:"Bamako",
+img:"https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=85",
+desc:"4x4 confortable et robuste. Exemple d’annonce à confirmer."
+},
+
+{
+id:2,
+brand:"Toyota",
+model:"Hilux",
+year:2021,
+price:19800000,
+category:"Pick-up",
+type:"Utilitaires",
+fuel:"Diesel",
+km:"78 000 km",
+location:"Bamako",
+img:"https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=85",
+desc:"Pick-up polyvalent pour les activités professionnelles."
+},
+
+{
+id:3,
+brand:"TVS",
+model:"Apache RTR 160",
+year:2024,
+price:1150000,
+category:"Sportive",
+type:"Motos",
+fuel:"Essence",
+km:"3 200 km",
+location:"Bamako",
+img:"https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85",
+desc:"Moto de démonstration. Informations à confirmer auprès du vendeur."
+},
+
+{
+id:4,
+brand:"Hyundai",
+model:"H-1",
+year:2020,
+price:14000000,
+category:"Fourgon",
+type:"Utilitaires",
+fuel:"Diesel",
+km:"96 000 km",
+location:"Kati",
+img:"https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&w=900&q=85",
+desc:"Fourgon utilitaire pour transport de personnes ou marchandises."
+},
+
+{
+id:5,
+brand:"Mercedes-Benz",
+model:"GLE 450",
+year:2022,
+price:38500000,
+category:"SUV",
+type:"Voitures",
+fuel:"Essence",
+km:"32 000 km",
+location:"Bamako",
+img:"https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=85",
+desc:"SUV premium, boîte automatique et intérieur confortable."
+},
+
+{
+id:6,
+brand:"Yamaha",
+model:"XTZ 125",
+year:2023,
+price:1250000,
+category:"Tout-terrain",
+type:"Motos",
+fuel:"Essence",
+km:"5 000 km",
+location:"Sikasso",
+img:"https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=85",
+desc:"Moto polyvalente pour les déplacements quotidiens."
+},
+
+{
+id:7,
+brand:"Toyota",
+model:"Hiace",
+year:2021,
+price:16500000,
+category:"Fourgon",
+type:"Utilitaires",
+fuel:"Diesel",
+km:"70 000 km",
+location:"Bamako",
+img:"https://images.unsplash.com/photo-1520052205864-92d242b3a76b?auto=format&fit=crop&w=900&q=85",
+desc:"Véhicule utilitaire adapté au transport."
+},
+
+{
+id:8,
+brand:"BMW",
+model:"X5 M Sport",
+year:2021,
+price:32000000,
+category:"SUV",
+type:"Voitures",
+fuel:"Diesel",
+km:"51 000 km",
+location:"Ségou",
+img:"https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=85",
+desc:"SUV sportif avec finition premium."
+}
+
 ];
 
 let activeType="Voitures";
@@ -352,40 +916,82 @@ Motos:["Tout","Sportive","Tout-terrain","Scooter","Électrique"]
 };
 
 function updateFilters(){
+
 const el=document.getElementById("filters");
-el.innerHTML=categoryMap[activeType].map((v,i)=>`<button class="chip ${i===0?"active":""}" data-cat="${v}">${v==="Tout"?"Toutes les annonces":v}</button>`).join("");
+
+el.innerHTML=categoryMap[activeType].map((v,i)=>
+`<button class="chip ${i===0?"active":""}" data-cat="${v}">
+${v==="Tout"?"Toutes les annonces":v}
+</button>`
+).join("");
+
 activeCategory="Tout";
 }
 
 function render(){
+
 const filtered=cars.filter(c=>
-(c.type||"Voitures")===activeType&&
-(activeCategory==="Tout"||c.category===activeCategory)&&
-(`${c.brand} ${c.model} ${c.year}`).toLowerCase().includes(query.toLowerCase())&&
-(!maxPrice||c.price<=maxPrice)&&
+(c.type||"Voitures")===activeType &&
+(activeCategory==="Tout"||c.category===activeCategory) &&
+(`${c.brand} ${c.model} ${c.year}`).toLowerCase().includes(query.toLowerCase()) &&
+(!maxPrice||c.price<=maxPrice) &&
 (!locationFilter||locationFilter==="Partout au Mali"||c.location===locationFilter)
 );
 
 document.getElementById("carsGrid").innerHTML=filtered.map(c=>`
+
 <article class="card">
+
 <div class="card-img-wrap">
-<img class="car-img" src="${c.img}" alt="${c.brand} ${c.model}" loading="lazy" onerror="this.style.opacity='.15'">
-<span class="badge">${c.type==="Voitures"?"Voiture":c.type==="Utilitaires"?"Utilitaire":"Moto"}</span>
-<button class="heart" aria-label="Ajouter aux favoris" onclick="toggleFavorite(${c.id},this)">${favorites.has(c.id)?"♥":"♡"}</button>
+
+<img class="car-img"
+src="${c.img}"
+alt="${c.brand} ${c.model}"
+loading="lazy"
+onerror="this.style.opacity='.15'">
+
+<span class="badge">
+${c.type==="Voitures"?"Voiture":c.type==="Utilitaires"?"Utilitaire":"Moto"}
+</span>
+
+<button class="heart"
+aria-label="Ajouter aux favoris"
+onclick="toggleFavorite(${c.id},this)">
+${favorites.has(c.id)?"♥":"♡"}
+</button>
+
 </div>
+
 <div class="card-body">
+
 <div class="meta">${c.year} · ${c.location}</div>
+
 <div class="car-name">${c.brand} ${c.model}</div>
-<div class="specs"><span>⚙ ${c.fuel}</span><span>◉ ${c.km}</span></div>
-<div class="price">${fmt(c.price)}</div>
-<div class="card-actions"><button class="btn dark" onclick="showDetail(${c.id})">Voir l’annonce</button></div>
+
+<div class="specs">
+<span>⚙ ${c.fuel}</span>
+<span>◉ ${c.km}</span>
 </div>
-</article>`).join("");
+
+<div class="price">${fmt(c.price)}</div>
+
+<div class="card-actions">
+<button class="btn dark" onclick="showDetail(${c.id})">
+Voir l’annonce
+</button>
+</div>
+
+</div>
+</article>
+
+`).join("");
 
 document.getElementById("empty").classList.toggle("hidden",filtered.length>0);
+
 }
 
 function toggleFavorite(id,btn){
+
 if(favorites.has(id)){
 favorites.delete(id);
 btn.textContent="♡";
@@ -393,19 +999,37 @@ btn.textContent="♡";
 favorites.add(id);
 btn.textContent="♥";
 }
+
 }
 
 function showDetail(id){
+
 const c=cars.find(x=>x.id===id);
+
 document.getElementById("detailTitle").textContent=c.brand+" "+c.model;
+
 document.getElementById("detailContent").innerHTML=`
+
 <img class="detail-img" src="${c.img}" alt="${c.brand} ${c.model}">
+
 <p class="meta">${c.year} · ${c.type} · ${c.location}</p>
+
 <h2 style="color:#a56b0b">${fmt(c.price)}</h2>
+
 <p>${c.desc}</p>
-<p class="notice">Annonce de démonstration. Vérifiez le véhicule et les documents avant toute transaction.</p>
-<button class="btn dark full" onclick="alert('Les contacts vendeurs seront activés après connexion d’un service de publication réel.')">Contacter le vendeur (bientôt)</button>`;
+
+<p class="notice">
+Annonce de démonstration. Vérifiez le véhicule et les documents avant toute transaction.
+</p>
+
+<button class="btn dark full"
+onclick="alert('Les contacts vendeurs seront activés après connexion d’un service de publication réel.')">
+Contacter le vendeur (bientôt)
+</button>
+`;
+
 document.getElementById("detailModal").classList.add("open");
+
 }
 
 function openSell(){
@@ -414,10 +1038,15 @@ document.getElementById("sellModal").classList.add("open");
 
 document.querySelectorAll("[data-scroll]").forEach(b=>
 b.addEventListener("click",()=>{
+
 document.querySelectorAll(".navlinks button").forEach(x=>x.classList.remove("active"));
+
 const target=b.dataset.scroll;
+
 document.getElementById(target)?.scrollIntoView({behavior:"smooth"});
+
 b.classList.add("active");
+
 })
 );
 
@@ -425,70 +1054,129 @@ document.getElementById("sellTop").addEventListener("click",openSell);
 document.getElementById("sellMid").addEventListener("click",openSell);
 
 document.getElementById("categoryTabs").addEventListener("click",e=>{
+
 const b=e.target.closest("[data-type]");
+
 if(!b)return;
+
 activeType=b.dataset.type;
-document.querySelectorAll("#categoryTabs button").forEach(x=>x.classList.toggle("active",x===b));
+
+document.querySelectorAll("#categoryTabs button").forEach(x=>
+x.classList.toggle("active",x===b)
+);
+
 updateFilters();
 render();
+
 });
 
 document.getElementById("searchBtn").addEventListener("click",()=>{
-query=(document.getElementById("searchBrand").value+" "+document.getElementById("searchModel").value).trim();
+
+query=(
+document.getElementById("searchBrand").value+" "+
+document.getElementById("searchModel").value
+).trim();
+
 maxPrice=Number(document.getElementById("searchPrice").value)||0;
+
 locationFilter=document.getElementById("searchLocation").value;
+
 render();
+
 document.getElementById("vehicules").scrollIntoView({behavior:"smooth"});
+
 });
 
 document.getElementById("filters").addEventListener("click",e=>{
+
 const b=e.target.closest("[data-cat]");
+
 if(!b)return;
+
 activeCategory=b.dataset.cat;
-document.querySelectorAll("#filters .chip").forEach(x=>x.classList.toggle("active",x===b));
+
+document.querySelectorAll("#filters .chip").forEach(x=>
+x.classList.toggle("active",x===b)
+);
+
 render();
+
 });
 
 document.querySelectorAll("[data-close]").forEach(b=>
-b.addEventListener("click",()=>document.getElementById(b.dataset.close).classList.remove("open"))
+b.addEventListener("click",()=>
+document.getElementById(b.dataset.close).classList.remove("open")
+)
 );
 
 document.querySelectorAll(".modal-backdrop").forEach(m=>
-m.addEventListener("click",e=>{if(e.target===m)m.classList.remove("open")})
+m.addEventListener("click",e=>{
+if(e.target===m)m.classList.remove("open");
+})
 );
 
 document.getElementById("sellForm").addEventListener("submit",e=>{
+
 e.preventDefault();
+
 const type=document.getElementById("vehicleType").value;
+
 const c={
+
 id:Math.max(0,...cars.map(x=>x.id))+1,
+
 brand:document.getElementById("brand").value.trim(),
+
 model:document.getElementById("model").value.trim(),
+
 year:Number(document.getElementById("year").value),
+
 price:Number(document.getElementById("price").value),
+
 category:document.getElementById("category").value,
+
 type,
+
 fuel:"À préciser",
+
 km:"Kilométrage à préciser",
+
 location:"Bamako",
+
 img:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85",
-desc:"Annonce ajoutée localement. Contact vendeur : "+document.getElementById("phone").value
+
+desc:"Annonce ajoutée localement. Contact vendeur : "+
+document.getElementById("phone").value
+
 };
 
 cars.unshift(c);
+
 activeType=type;
-document.querySelectorAll("#categoryTabs button").forEach(x=>x.classList.toggle("active",x.dataset.type===type));
+
+document.querySelectorAll("#categoryTabs button").forEach(x=>
+x.classList.toggle("active",x.dataset.type===type)
+);
+
 updateFilters();
 render();
+
 e.target.reset();
+
 document.getElementById("year").value=2022;
+
 document.getElementById("sellModal").classList.remove("open");
+
 document.getElementById("vehicules").scrollIntoView({behavior:"smooth"});
+
 alert("Annonce ajoutée à cette démonstration uniquement. Elle n'est pas publiée sur Internet.");
+
 });
 
 updateFilters();
 render();
+
 </script>
+
 </body>
 </html>
