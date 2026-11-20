@@ -1060,7 +1060,7 @@ activeCategory="Tout";
 function render(){
 
 const filtered=cars.filter(c=>
-(activeType==="Tout" || (c.type||"Voitures")===activeType) &&
+(!activeType || activeType==="Tout" || (c.type||c.Type||"Voitures")===activeType) &&
 (activeCategory==="Tout"||c.category===activeCategory) &&
 (`${c.brand} ${c.model} ${c.year}`).toLowerCase().includes(query.toLowerCase()) &&
 (!maxPrice||c.price<=maxPrice) &&
