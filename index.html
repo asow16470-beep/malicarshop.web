@@ -233,6 +233,233 @@ font-weight:
   .map-controls{grid-template-columns:1fr}
   #actorsMap{height:340px}
 }
+/* CORRECTIONS D'AFFICHAGE MALICARSHOP */
+
+.modal-backdrop{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(0,0,0,.72);
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  overflow-y:auto;
+}
+
+.modal{
+  display:block;
+  width:100%;
+  max-width:520px;
+  max-height:90vh;
+  overflow-y:auto;
+  background:#fff;
+  color:#172331;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+
+.modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.modal-head h2{
+  margin:0;
+  color:#071827;
+}
+
+.close{
+  background:#edf0f3;
+  color:#071827;
+  border-radius:50%;
+  width:36px;
+  height:36px;
+  font-size:20px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  margin-bottom:15px;
+}
+
+.field label{
+  font-weight:700;
+  color:#263747;
+}
+
+.field input,
+.field select{
+  width:100%;
+  min-height:44px;
+  padding:10px 12px;
+  border:1px solid #ccd4dc;
+  border-radius:9px;
+  background:#fff;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:750;
+  text-decoration:none;
+  text-align:center;
+}
+
+.btn.gold{
+  background:#e4ad36;
+  color:#071827;
+}
+
+.btn.dark{
+  background:#071827;
+  color:#fff;
+}
+
+.full{
+  width:100%;
+}
+
+.hidden{
+  display:none !important;
+}
+
+.profile-tabs{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.profile-tabs button{
+  flex:1;
+  padding:11px;
+  border-radius:9px;
+  background:#edf0f3;
+  color:#071827;
+}
+
+.profile-tabs button.active{
+  background:#e4ad36;
+  font-weight:800;
+}
+
+.listing-card{
+  background:#fff;
+  border:1px solid #dce2e8;
+  border-radius:15px;
+  padding:18px;
+  box-shadow:0 5px 16px rgba(7,24,39,.08);
+}
+
+.listing-info h3{
+  color:#071827;
+}
+
+.listing-info strong{
+  color:#a97812;
+  font-size:1.2rem;
+}
+
+.services-track{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  padding:15px 5px;
+  scroll-snap-type:x mandatory;
+}
+
+.service{
+  flex:0 0 260px;
+  background:#fff;
+  color:#071827;
+  border:1px solid #e4ad36;
+  border-radius:16px;
+  padding:15px;
+  scroll-snap-align:start;
+  cursor:pointer;
+}
+
+.service-image{
+  height:145px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f7e9c7;
+  border-radius:12px;
+  font-size:48px;
+  margin-bottom:12px;
+}
+
+.map-toolbar{
+  background:#fff;
+  padding:15px;
+  border-radius:14px;
+  margin-bottom:15px;
+}
+
+.map-search-row{
+  display:flex;
+  gap:10px;
+  margin:10px 0 15px;
+}
+
+.map-search-row input{
+  flex:1;
+  min-width:0;
+  padding:12px;
+  border:1px solid #ccd4dc;
+  border-radius:9px;
+}
+
+.map-filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.map-filter{
+  padding:9px 13px;
+  border-radius:20px;
+  background:#edf0f3;
+  color:#071827;
+}
+
+.map-filter.active{
+  background:#e4ad36;
+}
+
+#actorsMap{
+  width:100%;
+  height:420px;
+  min-height:420px;
+  background:#e8edf2;
+  border-radius:14px;
+}
+
+.map-empty-note{
+  color:#667085;
+  font-size:14px;
+  margin-top:12px;
+}
+
+footer{
+  background:#071827;
+  color:#fff;
+  padding:25px;
+  text-align:center;
+}
+
+@media(max-width:600px){
+  .modal{padding:18px}
+  .map-search-row{flex-direction:column}
+  #actorsMap{height:340px;min-height:340px}
+}
 </style>
 </head>
 <body>
